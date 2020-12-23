@@ -1,6 +1,6 @@
 <template>
   <div>
-    <a-layout id="components-layout-demo-custom-trigger">
+    <a-layout class="components-layout-demo-custom-trigger">
       <a-layout-sider
         v-model="collapsed"
         class="layout-sider"
@@ -58,7 +58,7 @@
         </a-menu>
       </a-layout-sider>
       <a-layout>
-        <a-layout-header style="background: #fff; padding: 0">
+        <a-layout-header style="background: .fff; padding: 0">
           <a-icon
             class="trigger"
             :type="collapsed ? 'menu-unfold' : 'menu-fold'"
@@ -69,11 +69,11 @@
           :style="{
             margin: '24px 16px',
             padding: '24px',
-            background: '#fff',
+            background: '.fff',
             minHeight: '280px'
           }"
         >
-          Content
+          <router-view/>
         </a-layout-content>
       </a-layout>
     </a-layout>
@@ -83,56 +83,56 @@
 
 <script>
 // @ is an alias to /src
-import AddProjectDialog from "./components/AddProjectDialog";
+import AddProjectDialog from './components/AddProjectDialog'
 
 export default {
-  name: "Home",
+  name: 'Layout',
   components: {
     AddProjectDialog
   },
-  data() {
+  data () {
     return {
       collapsed: false,
       showAddProjectDialog: false,
-      type: "",
+      type: '',
       projectMoreList: [
         {
-          type: "OPEN",
-          label: "打开"
+          type: 'OPEN',
+          label: '打开'
         },
         {
-          type: "CLOSE",
-          label: "关闭"
+          type: 'CLOSE',
+          label: '关闭'
         },
         {
-          type: "EDIT",
-          label: "编辑"
+          type: 'EDIT',
+          label: '编辑'
         },
         {
-          type: "DELETE",
-          label: "删除"
+          type: 'DELETE',
+          label: '删除'
         },
         {
-          type: "EXPORT",
-          label: "导出"
+          type: 'EXPORT',
+          label: '导出'
         }
       ]
-    };
+    }
   },
   methods: {
-    handlerShowAddDialog() {
-      this.type = "ADD";
-      this.showAddProjectDialog = true;
+    handlerShowAddDialog () {
+      this.type = 'ADD'
+      this.showAddProjectDialog = true
     },
-    handlerProjectMore() {
-      console.log("more");
+    handlerProjectMore () {
+      console.log('more')
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
-#components-layout-demo-custom-trigger .trigger {
+.components-layout-demo-custom-trigger .trigger {
   font-size: 18px;
   line-height: 64px;
   padding: 0 24px;
@@ -140,11 +140,11 @@ export default {
   transition: color 0.3s;
 }
 
-#components-layout-demo-custom-trigger .trigger:hover {
+.components-layout-demo-custom-trigger .trigger:hover {
   color: #1890ff;
 }
 
-#components-layout-demo-custom-trigger .logo {
+.components-layout-demo-custom-trigger .logo {
   height: 32px;
   background: rgba(255, 255, 255, 0.2);
   margin: 16px;

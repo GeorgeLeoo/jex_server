@@ -54,44 +54,44 @@
 </template>
 
 <script>
-function hasErrors(fieldsError) {
-  return Object.keys(fieldsError).some(field => fieldsError[field]);
+function hasErrors (fieldsError) {
+  return Object.keys(fieldsError).some(field => fieldsError[field])
 }
 export default {
-  name: "Login",
-  data() {
+  name: 'Login',
+  data () {
     return {
       hasErrors,
-      form: this.$form.createForm(this, { name: "horizontal_login" })
-    };
+      form: this.$form.createForm(this, { name: 'horizontal_login' })
+    }
   },
-  mounted() {
+  mounted () {
     this.$nextTick(() => {
       // To disabled submit button at the beginning.
-      this.form.validateFields();
-    });
+      this.form.validateFields()
+    })
   },
   methods: {
     // Only show error after a field is touched.
-    userNameError() {
-      const { getFieldError, isFieldTouched } = this.form;
-      return isFieldTouched("userName") && getFieldError("userName");
+    userNameError () {
+      const { getFieldError, isFieldTouched } = this.form
+      return isFieldTouched('userName') && getFieldError('userName')
     },
     // Only show error after a field is touched.
-    passwordError() {
-      const { getFieldError, isFieldTouched } = this.form;
-      return isFieldTouched("password") && getFieldError("password");
+    passwordError () {
+      const { getFieldError, isFieldTouched } = this.form
+      return isFieldTouched('password') && getFieldError('password')
     },
-    handleSubmit(e) {
-      e.preventDefault();
+    handleSubmit (e) {
+      e.preventDefault()
       this.form.validateFields((err, values) => {
         if (!err) {
-          console.log("Received values of form: ", values);
+          console.log('Received values of form: ', values)
         }
-      });
+      })
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
@@ -102,5 +102,4 @@ export default {
     margin: 0 auto;
   }
 }
-
 </style>

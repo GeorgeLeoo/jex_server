@@ -1,10 +1,18 @@
-import Home from '../views/Home'
+import Layout from '../layout'
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'Layout',
+    component: Layout,
+    redirect: '/router',
+    children: [
+      {
+        path: '/router',
+        name: 'router',
+        component: () => import(/* webpackChunkName: "router" */ '../views/Router/index.vue')
+      }
+    ]
   },
   {
     path: '/about',
@@ -16,8 +24,8 @@ const routes = [
   },
   {
     path: '/login',
-    name: 'login',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Login/index.vue')
+    name: 'Login',
+    component: () => import(/* webpackChunkName: "login" */ '../views/Login/index.vue')
   }
 ]
 export default routes

@@ -194,7 +194,7 @@
 
 <script>
 export default {
-  name: "AddProjectDialog",
+  name: 'AddProjectDialog',
   props: {
     value: {
       type: Boolean,
@@ -207,11 +207,11 @@ export default {
     type: {
       type: String,
       default: ''
-    },
+    }
   },
-  data() {
+  data () {
     return {
-      title: "",
+      title: '',
       formItemLayout: {
         labelCol: {
           xs: { span: 24 },
@@ -222,10 +222,10 @@ export default {
           sm: { span: 16 }
         }
       }
-    };
+    }
   },
   watch: {
-    value(val) {
+    value (val) {
       if (val) {
         if (this.type === 'ADD') {
           this.title = '新建'
@@ -236,33 +236,34 @@ export default {
       }
     }
   },
-  beforeCreate() {
-    this.form = this.$form.createForm(this, { name: 'register' });
+  beforeCreate () {
+    this.form = this.$form.createForm(this, { name: 'register' })
   },
   methods: {
-    compareToFirstPassword(rule, value, callback) {
-      const form = this.form;
-      if (value && value !== form.getFieldValue("password")) {
-        callback("Two passwords that you enter is inconsistent!");
+    compareToFirstPassword (rule, value, callback) {
+      const form = this.form
+      if (value && value !== form.getFieldValue('password')) {
+        // eslint-disable-next-line standard/no-callback-literal
+        callback('Two passwords that you enter is inconsistent!')
       } else {
-        callback();
+        callback()
       }
     },
-    validateToNextPassword(rule, value, callback) {
-      const form = this.form;
+    validateToNextPassword (rule, value, callback) {
+      const form = this.form
       if (value && this.confirmDirty) {
-        form.validateFields(["confirm"], { force: true });
+        form.validateFields(['confirm'], { force: true })
       }
-      callback();
+      callback()
     },
-    handleOk() {
-      this.$emit("ok");
+    handleOk () {
+      this.$emit('ok')
     },
-    handleCancel() {
-      this.$emit("input", !this.value);
+    handleCancel () {
+      this.$emit('input', !this.value)
     }
   }
-};
+}
 </script>
 
 <style></style>
