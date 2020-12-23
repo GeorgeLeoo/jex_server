@@ -1,0 +1,56 @@
+extends layout
+
+block content
+    div(class="layui-layout-body")
+        div(class="layui-layout layui-layout-admin")
+            div(class="layui-header")
+                div(class="layui-logo") layui后台布局
+                    ul(class="layui-nav layui-layout-left header-left")
+                        li(class="layui-nav-item")
+                            a(href="") 控制台
+                        li(class="layui-nav-item")
+                            a(href="") 商品管理
+                        li(class="layui-nav-item")
+                            a(href="") 用户
+                        li(class="layui-nav-item")
+                            a(href="javascript:;") 其它系统
+                            dl(class="layui-nav-child")
+                                dd
+                                    a(href="") 邮件管理
+                                dd
+                                    a(href="") 消息管理
+                                dd
+                                    a(href="") 授权管理
+                ul(class="layui-nav layui-layout-right")
+                    li(class="layui-nav-item")
+                        a(href="javascript:;")
+                            img(src="http://t.cn/RCzsdCq" class="layui-nav-img")
+                            span 贤心
+                        
+                        dl(class="layui-nav-child")
+                            dd
+                                a(href="") 基本资料
+                            dd
+                                a(href="") 安全设置
+                    li(class="layui-nav-item")
+                        a(href="") 退了
+            div(class="layui-side layui-bg-black")
+                div(class="layui-nav-item layui-nav-itemed left-menu-title-wrapper")
+                    a(class="left-menu-title" href="javascript:;")
+                        span 所有项目
+                        button(type="button" class="layui-btn layui-btn-sm") 
+                            i(class="layui-icon") &#xe654;
+                div(class="layui-side-scroll")
+                    ul(class="layui-nav layui-nav-tree"  lay-filter="test")
+                        li(class="layui-nav-item layui-nav-itemed")
+                            dl(class="layui-nav-child")
+                                dd
+                                    a(href="javascript:;") 列表一
+                                dd
+                                    a(href="javascript:;") 列表二
+                                dd
+                                    a(href="javascript:;") 列表三
+            div(class="layui-body")
+                div(style="padding: 15px;") 内容主体区域
+            div(class="layui-footer") 底部固定区域
+        
