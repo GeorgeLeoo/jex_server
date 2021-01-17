@@ -22,7 +22,7 @@
               <span>CowPen</span>
               <a-dropdown :trigger="['click']">
                 <a class="ant-dropdown-link" @click="e => e.preventDefault()">
-                  <a-icon type="more" class="more-icon" />
+                  <a-icon type="more" class="more-icon"/>
                 </a>
                 <a-menu slot="overlay">
                   <a-menu-item
@@ -58,17 +58,16 @@
         </a-menu>
       </a-layout-sider>
       <a-layout>
-        <a-layout-header style="background: .fff; padding: 0">
-          <a-icon
-            class="trigger"
-            :type="collapsed ? 'menu-unfold' : 'menu-fold'"
-            @click="() => (collapsed = !collapsed)"
-          />
-        </a-layout-header>
+        <!--        <a-layout-header style="background: .fff; padding: 0">-->
+        <!--          <a-icon-->
+        <!--            class="trigger"-->
+        <!--            :type="collapsed ? 'menu-unfold' : 'menu-fold'"-->
+        <!--            @click="() => (collapsed = !collapsed)"-->
+        <!--          />-->
+        <!--        </a-layout-header>-->
         <a-layout-content
           :style="{
-            margin: '24px 16px',
-            padding: '24px',
+            margin: '0 16px 24px 16px',
             background: '.fff',
             minHeight: '280px'
           }"
@@ -77,7 +76,7 @@
         </a-layout-content>
       </a-layout>
     </a-layout>
-    <add-project-dialog v-model="showAddProjectDialog" :type="type" />
+    <add-project-dialog v-model="showAddProjectDialog" :type="type"/>
   </div>
 </template>
 
@@ -149,19 +148,23 @@ export default {
   background: rgba(255, 255, 255, 0.2);
   margin: 16px;
 }
+
 .layout-sider {
   height: calc(100vh);
   background: #001529;
+
   .more-icon {
     float: right;
     height: 40px;
     line-height: 40px;
   }
 }
-  .project-more-item {
-    width: 120px;
-    text-align: center;
-  }
+
+.project-more-item {
+  width: 120px;
+  text-align: center;
+}
+
 .sider-title {
   display: flex;
   align-items: center;
@@ -169,6 +172,7 @@ export default {
   padding: 12px 0;
   padding-left: 24px;
   padding-right: 16px;
+
   span {
     color: #fff;
   }

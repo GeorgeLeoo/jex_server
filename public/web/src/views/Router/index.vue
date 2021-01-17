@@ -91,11 +91,11 @@ export default {
 }
 
 .layout-sider {
-  height: calc(100vh - 160px);
+  height: calc(100vh - 110px);
   background: #ffff;
 
   .parent-router {
-    height: calc(100vh - 160px);
+    height: calc(100vh - 110px);
     overflow: auto;
 
     .parent-router-item {
@@ -131,7 +131,7 @@ export default {
 
   .children-router {
     background: #fff;
-    height: calc(100vh - 160px);
+    height: calc(100vh - 110px);
     overflow: auto;
 
     .children-router-item {
